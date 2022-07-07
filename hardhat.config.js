@@ -1,5 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
+require("dotenv").config();
+
 const fs = require('fs');
 // const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
 
@@ -18,8 +20,8 @@ module.exports = {
       chainId: 1337
     },
     goerli: {
-      url: "<YOUR_ALCHEMY_URL>",
-      accounts: [ "<YOUR_PRIVATE_KEY>" ]
+      url: process.env.REACT_APP_ALCHEMY_API_URL,
+      accounts: [ process.env.REACT_APP_PRIVATE_KEY ],
     }
   },
   solidity: {
