@@ -63,7 +63,7 @@ export default function SellNFT () {
             listingPrice = listingPrice.toString();
 
             let transaction = await contract.createToken(metadataURL, price, {value: listingPrice});
-            await transaction.await();
+            await transaction.wait();
 
             alert("Successfully uploaded your NFT!");
             updateMessage("");
@@ -99,7 +99,7 @@ export default function SellNFT () {
                 </div>
                 <br></br>
                 <div className="text-green text-center">{message}</div>
-                <button onClick={""} className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg">
+                <button onClick={listNFT} className="font-bold mt-10 w-full bg-purple-500 text-white rounded p-2 shadow-lg">
                     List NFT
                 </button>
             </form>
